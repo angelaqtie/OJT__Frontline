@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  /* TOOGLE MENU */
+  .header__nav.open {
+    @apply right-0 z-50 overflow-y-hidden;
+  }
+  .toggle__menu {
+    @apply flex flex-col pt-11 gap-1 z-50 md:hidden lg:hidden;
+  }
+  .toggle__menu span {
+    @apply content-[*] bg-black w-10 h-1 rounded-lg 
+        duration-700 ease-in-out ;
+  }
+  .toggle__menu span:last-child {
+    @apply content-[*] bg-black w-10 h-1 rounded-lg 
+        duration-700 ease-in-out;
+  }
+  .toggle__menu.open span {
+    @apply  rotate-[360deg];
+  }
+  .toggle__menu.open span:last-child {
+    @apply rotate-[360deg];
+  }
+
+
+  /* ABOUT dropdown */
+
+  .FAQ__details {
+    @apply max-w-[30rem] mx-auto ;
+  }
+  .FAQ__item h4,
+  .FAQ__item i {
+    @apply bg-gray-200 text-black px-3 py-2  font-semibold
+    transition-all flex justify-between items-center cursor-pointer;
+  }
+  .FAQ__details h4, .FAQ__details ul.open{
+    @apply lg:w-[75rem] lg:mx-auto  ;
+  }
+  .FAQ__item i.open {
+    @apply rotate-[900deg] transition-all ;
+  }
+  .FAQ__item ul {
+    @apply bg-gray-200 h-auto max-h-0 overflow-hidden transition-all text-justify;
+  }
+  .FAQ__item ul.open {
+    @apply bg-gray-200 max-h-[50rem] mx-auto p-3 transition-all text-justify ;
+  }
+  .FAQ__item li{
+    @apply flex flex-row items-start;
+  }
+  .FAQ__item li i{
+    @apply text-primary
+  }
+  
+  
+  /* ABOUT tabs*/
+
+  .FAQ__tab li {
+    @apply mx-auto lg:font-thin;
+  }
+  .FAQ__tab li.active {
+    @apply text-primary border-b-2 border-primary w-[15rem] mx-auto;
+  }
+  .FAQ__details {
+    @apply hidden;
+  }
+  .FAQ__details.active {
+    @apply block;
+  }
+  .FAQ__item small  {
+    @apply hidden lg:block lg:text-primary lg:text-3xl;
+  }
+  .FAQ__item span{
+    @apply  lg:flex lg:flex-row lg:justify-center lg:gap-2  lg:items-center;
+  }
+  
+
+  /* BUTTON */
+
+  .btn {
+    @apply py-2 px-4 bg-transparent rounded-xl shadow-[0_8px_24px_-15px_rgba(149,157,165,0.2)];
+  }
+  .btn.bg-primaryy {
+    @apply bg-blue text-white hover:bg-sky-700 hover:text-white;
+  }
+  .btn.bg-outline {
+    @apply bg-transparent border border-black text-black hover:bg-primary hover:text-white;
+  }
+  .btn.bg-green {
+    @apply bg-primary text-white hover:bg-secondary;
+  }
+  .btn.bg-line {
+    @apply bg-transparent text-black border border-primary hover:bg-secondary;
+  }
+}
